@@ -1,0 +1,12 @@
+.orange-slice-right {
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 1200px;
+    float: right;
+}
+
+.up {
+    z-index: 1;
+}

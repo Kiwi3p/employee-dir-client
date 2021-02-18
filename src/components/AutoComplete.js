@@ -2,24 +2,23 @@ import React from "react";
 //import JSONDATA from "./data.json";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 
 const AutoComplete = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  
+
   const [JSONDATA, setData] = useState([]);
-  
+
   useEffect(() => {
     axios({
       method: "get",
-      url:
-      `${process.env.REACT_APP_PROJECTS_API}/api/names`
+      url: `${process.env.REACT_APP_PROJECTS_API}/api/names`,
     }).then(function (response) {
       setData(response.data);
       console.log(response);
     });
   }, []);
-  
+
   document.addEventListener("DOMContentLoaded", function () {
     var lazyloadImages = document.querySelectorAll("img.lazy");
     var lazyloadThrottleTimeout;
@@ -72,10 +71,14 @@ const AutoComplete = () => {
             }
           }).map((val, key) => {
             return (
-              <div className="user" key={key}>
+              <Link
+                to={`/names/${val._id}`}
+                className="user form-input flex bg-teal-300 border border-blue-600 rounded w-full py-2 px-4 text-grey-800 leading-tight"
+                key={key}
+              >
                 <img src={val.picture.thumbnail} alt={val.name.first} />
                 <h1>{val.name.first}</h1>
-              </div>
+              </Link>
             );
           })}
         </div>

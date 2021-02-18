@@ -23,7 +23,7 @@ class NameService {
 
 
   updateName(updatedName) {
-    return this.service.put(`/names/${updatedName.id}`, updatedName);
+    return this.service.put(`/names/${updatedName._id}`, updatedName);
   }
 
   deleteName(id) {
