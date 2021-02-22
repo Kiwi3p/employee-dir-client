@@ -1,8 +1,8 @@
 import React from "react";
-//import JSONDATA from "./data.json";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./AutoComplete.css";
 
 const AutoComplete = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -59,7 +59,7 @@ const AutoComplete = () => {
             setSearchTerm(event.target.value);
           }}
         />
-        <div className="results">
+        <div className="results bg-white">
           {JSONDATA.filter((val) => {
             console.log(val);
             if (searchTerm === "") {
@@ -73,11 +73,11 @@ const AutoComplete = () => {
             return (
               <Link
                 to={`/names/${val._id}`}
-                className="user form-input flex bg-teal-300 border border-blue-600 rounded w-full py-2 px-4 text-grey-800 leading-tight"
+                className="user form-input flex bg-teal-300 border border-blue-600 rounded w-full py-2 px-4 text-grey-800 leading-tight items-center"
                 key={key}
               >
                 <img src={val.picture.thumbnail} alt={val.name.first} />
-                <h1>{val.name.first}</h1>
+                <h1 className="pl-5">{val.name.first}</h1>
               </Link>
             );
           })}

@@ -50,38 +50,38 @@ class NameDetail extends React.Component {
   render() {
     return (
       <div>
-        <div class="flex items-center h-screen w-full justify-center">
-          <div class="max-w-xs">
-            <div class="bg-white shadow-xl rounded-lg py-3">
-              <div class="photo-wrapper p-2">
+        <div className="flex items-center h-screen w-full justify-center">
+          <div className="max-w-xs">
+            <div className="bg-white shadow-xl rounded-lg py-3">
+              <div className="photo-wrapper p-2">
                 <img
-                  class="w-32 h-32 rounded-full mx-auto"
+                  className="w-32 h-32 rounded-full mx-auto"
                   src={this.state.img}
                   alt=""
                 />
               </div>
-              <div class="p-2">
-                <h3 class="text-center text-xl text-gray-900 font-medium leading-8">
+              <div className="p-2">
+                <h3 className="text-center text-xl text-gray-900 font-medium leading-8">
                   {this.state.name.first} {this.state.name.last}
                 </h3>
-                <div class="text-center text-gray-400 text-xs font-semibold">
+                <div classNAme="text-center text-gray-400 text-xs font-semibold">
                   <p>Employee</p>
                 </div>
-                <table class="text-xs my-3">
+                <table className="text-xs my-3">
                   <tbody>
                     <tr>
-                      <td class="px-2 py-2 text-gray-500 font-semibold">
+                      <td className="px-2 py-2 text-gray-500 font-semibold">
                         Address
                       </td>
-                      <td class="px-2 py-2">
+                      <td className="px-2 py-2">
                         {this.state.location.city}, {this.state.location.state}
                       </td>
                     </tr>
                     <tr>
-                      <td class="px-2 py-2 text-gray-500 font-semibold">
+                      <td className="px-2 py-2 text-gray-500 font-semibold">
                         Email
                       </td>
-                      <td class="px-2 py-2">{this.state.email}</td>
+                      <td className="px-2 py-2">{this.state.email}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -89,7 +89,7 @@ class NameDetail extends React.Component {
                 <div class="text-center my-3">
                   <button
                     onClick={() => this.handleNameDelete(this.state.id)}
-                    class="hover:bg-blue-300 rounded-full py-2 px-3 font-semibold hover:text-white bg-blue-500 text-gray-100"
+                    className="m-5 hover:bg-blue-300 rounded-full py-2 px-3 font-semibold hover:text-white bg-blue-500 text-gray-100"
                   >
                     Delete
                   </button>
@@ -97,7 +97,7 @@ class NameDetail extends React.Component {
                     onClick={() =>
                       this.props.history.push(`/names/${this.state.id}/edit`)
                     }
-                    class="hover:bg-blue-300 rounded-full py-2 px-3 font-semibold hover:text-white bg-blue-500 text-gray-100"
+                    className="m-5 hover:bg-blue-300 rounded-full py-2 px-3 font-semibold hover:text-white bg-blue-500 text-gray-100"
                   >
                     Edit
                   </button>

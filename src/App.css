@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.index {
+  z-index: 1;
+}
+
+.back {
+  z-index: 0;
+}
+
+.lottie-container {
+  z-index: -1;
+  overflow: hidden;
+  position: fixed;
+}
+
+@media (max-width: 780px) {
+  .lottie-container{
+  z-index: -1;
+  overflow: hidden;
+  position: fixed;
+  transform: scale(5);
+  }
+}
+
+.bring-to-front {
+  z-index: 5;
+}

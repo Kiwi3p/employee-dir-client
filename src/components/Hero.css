@@ -7,6 +7,27 @@
     float: right;
 }
 
+
+
 .up {
     z-index: 1;
+}
+
+.lottie-container {
+    position: absolute;
+    top: 70px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.front {
+    z-index: 1;
+}
+
+.front-container {
+    z-index: 10;
+}
+
+.bring-to-front {
+    z-index: 100;
 }

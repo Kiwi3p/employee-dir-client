@@ -11,12 +11,11 @@ class EditName extends React.Component {
     state: "",
   };
 
-  //Component lifecycle method
   //get the id of the project that comes from the url
   componentDidMount() {
-    const projectId = this.props.match.params.id;
+    const id = this.props.match.params.id;
     const nameService = new NameService();
-    nameService.getNames(projectId).then((response) => {
+    nameService.getNames(id).then((response) => {
       let employeeData = response.data;
       this.setState({
         id: employeeData._id,
@@ -36,14 +35,14 @@ class EditName extends React.Component {
     });
   };
 
+
   handleFormSubmit = (event) => {
     event.preventDefault();
     const nameService = new NameService();
     nameService.updateName(this.state).then(() => {
-      console.log("Employee updated!");
-      this.props.history.push(`/names/${this.state.id}`);
+        this.props.history.push(`/names/${this.state.id}`);
     });
-  };
+  }
 
   render() {
     return (

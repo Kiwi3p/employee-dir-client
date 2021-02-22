@@ -1,0 +1,12 @@
+.results {
+    position: absolute;
+  margin-top: -1px;
+  /* border: 1px solid rgba(0, 0, 0, 0.54); */
+  padding: 4px 0;
+  z-index: 1;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: none;
+}

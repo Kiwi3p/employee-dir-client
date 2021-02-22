@@ -17,13 +17,12 @@ class NameService {
   }
 
   addName(project) {
-    //axios.post('http://localhost:5000/characters/, { name: 'miguel});
     return this.service.post('/names', project);
 }
 
 
   updateName(updatedName) {
-    return this.service.put(`/names/${updatedName._id}`, updatedName);
+    return this.service.put(`/names/${updatedName.id}`, updatedName);
   }
 
   deleteName(id) {

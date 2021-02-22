@@ -11,6 +11,9 @@ import EditName from "./components/EditName";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Dropdown from "./components/Dropdown.js";
+import { useLottie } from "lottie-react";
+import WaveAnimation from "./components/animation/data.json";
+import "./App.css";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,22 +36,36 @@ function App() {
     };
   });
 
+  const options = {
+    animationData: WaveAnimation,
+    loop: true,
+    autoplay: true,
+  };
+
+  const { View } = useLottie(options);
+
   return (
+    <>
     <div className="App">
-      <BrowserRouter>
-        <Navbar toggle={toggle} />
-        <Dropdown isOpen={isOpen} toggle={toggle} />
-        <AnimatePresence>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/names" component={List} />
-          <Route exact path="/names/add" component={Add} />
-          <Route exact path="/names/:id" component={NameDetail} />
-          <Route exact path="/names/:id/edit" component={EditName} />
-        </Switch>
-        </AnimatePresence>
-      </BrowserRouter>
+        <div className="lottie-container">{View}</div>
+      <div className="bring-to-front">
+        <BrowserRouter>
+          <Navbar toggle={toggle} />
+          <Dropdown isOpen={isOpen} toggle={toggle} />
+          <AnimatePresence>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/names" component={List} />
+              <Route exact path="/names/add" component={Add} />
+              <Route exact path="/names/:id" component={NameDetail} />
+              <Route exact path="/names/:id/edit" component={EditName} />
+            </Switch>
+          </AnimatePresence>
+        </BrowserRouter>
+
+      </div>
     </div>
+    </>
   );
 }
 

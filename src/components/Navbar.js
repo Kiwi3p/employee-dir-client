@@ -1,11 +1,12 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import AutoComplete from "./AutoComplete";
+import "./Navbar.css"
 
 const Navbar = ({ toggle }) => {
   return (
     <nav
-      className="flex justify-between items-center h-16 bg-white text-black relative shadow-sm font-mono"
+      className="flex justify-between items-center h-16 bg-white text-black relative shadow-sm font-mono z-20"
       role="navigation"
     >
       <Link to="/" className="pl-6">

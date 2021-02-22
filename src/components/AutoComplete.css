@@ -1,12 +1,12 @@
 
 
-.user {
-display: flex;
-	border: 1px solid #ffc6c6;
-	height: 35px;
-	width: 120px;
-	border-radius: 50px;
-	justify-content: flex-start;
+.results {
+
+	/* height: 55px;
 	align-content: center;
-    transition: var(--transition-2);
+	display: flex;
+	justify-content: center;
+	margin: 10px 100px; */
 }
+
+
